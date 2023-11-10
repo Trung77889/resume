@@ -6,6 +6,7 @@
   box-sizing: border-box;
 }
 a {
+  display: block;
   text-decoration: none;
   text-transform: none;
   color: #4a90e2;
@@ -31,6 +32,7 @@ img {
 }
 /* Reset ends */
 
+/* ============ MENU ============ */
 .menu {
   display: flex;
   align-items: center;
@@ -48,6 +50,37 @@ img {
   color: white;
 }
 
+/* ============ BUTTON ============ */
+.button {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  background-color: #4a90e2;
+  color: white;
+}
+
+/* ============ BASIC LAYOUT ============ */
+.tb-2-cols {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.col {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Typography */
+.main-text {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 55px;
+}
+
+/* ============================ INDEX PAGE =============================== */
 /*Hero section*/
 
 .container {
@@ -56,11 +89,15 @@ img {
   margin: 60px auto;
 }
 
+main {
+  margin-top: 40px;
+}
+
 .hero {
   margin: 50px auto;
 }
 
-.hero img {
+.hero-image {
   border-radius: 10px;
   width: 100%;
   height: 450px;
@@ -99,4 +136,14 @@ h1.name {
   font-weight: 400;
   margin-top: 60px;
   line-height: 55px;
+}
+
+/* DESIGN TAB */
+.design-image {
+  max-width: 80%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.design-table {
+  margin-top: 16px;
 }
