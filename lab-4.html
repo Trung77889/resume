@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lab 4</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <ul class="menu">
+          <li class="menu-item">
+            <a href="./index.html" class="menu-link">Trang Chủ</a>
+          </li>
+          <li class="menu-item">
+            <a href="./about.html" class="menu-link">About</a>
+          </li>
+          <li class="menu-item">
+            <a href="./lab-4.html" class="menu-link">Lab 4</a>
+          </li>
+          <li class="menu-item">
+            <a href="./lab-5.html" class="menu-link">Lab 5</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <div class="hero">
+      <div class="container">
+        <div class="tab">
+          <button class="tablinks" onclick="openCity(event, 'Requirement')">
+            Requirement
+          </button>
+          <button class="tablinks" onclick="openCity(event, 'Design')">
+            Design
+          </button>
+          <button class="tablinks" onclick="openCity(event, 'Implement')">
+            Implement
+          </button>
+        </div>
+
+        <div id="Requirement" class="tabcontent">
+          <h1 class="name">Requirement Lab 4</h1>
+          <span class="job-title">Giao tiếp người máy</span>
+          <span class="student-id">Sinh Viên: Đặng Văn Trung</span>
+          <p class="main-text">
+            Chọn 1 đối tượng bất kỳ trong thế giới thực, ví dụ như lớp môn học,
+            giảng viên,… <br />
+            Sau đó thiết kế chức năng Quản lý đối tượng đó trên html bao gồm các
+            tính năng thêm, sửa, xóa, tìm kiếm cho đối tượng đó. <br />
+            Ví dụ, làm chức năng Quản lý Sinh viên, bao gôm tính năng thêm, sửa,
+            xóa, tìm kiếm. <br />Chú ý: Các thành viên trong lớp, trong nhóm
+            không được chọn các đối tượng giống nhau.
+          </p>
+        </div>
+
+        <div id="Design" class="tabcontent">
+          <h1 class="name">Design For Lab 4</h1>
+          <span class="job-title">Giao tiếp người máy</span>
+          <span class="student-id">Sinh Viên: Đặng Văn Trung</span>
+          <p class="main-text">Thiết kế trang Quản lý lịch trình cá nhân</p>
+          <div class="tb-2-cols design-table">
+            <div class="col">
+              <img src="./images/webdesign.jpg" alt="" class="design-image" />
+              <a
+                href="./images/webdesign.jpg"
+                download="proposed_file_name"
+                class="button"
+                >Download</a
+              >
+            </div>
+            <div class="col">
+              <img src="./images/figma.png" alt="" class="design-image" />
+              <a
+                href="https://www.figma.com/community/file/1304840889009399731/thiet-ke-trang-quan-ly-lich-trinh-ca-nhan"
+                class="button"
+                target="_blank"
+                >Download</a
+              >
+            </div>
+          </div>
+        </div>
+
+    <footer class="container">
+      <span style="font-size: 16px; margin-top: ">
+        Một điều nhỏ bé trong cuộc sống !
+      </span>
+    </footer>
+    <script>
+      function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+    </script>
+  </body>
+</html>

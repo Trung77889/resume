@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lab 5</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <ul class="menu">
+          <li class="menu-item">
+            <a href="./index.html" class="menu-link">Trang Chủ</a>
+          </li>
+          <li class="menu-item">
+            <a href="./about.html" class="menu-link">About</a>
+          </li>
+          <li class="menu-item">
+            <a href="./lab-4.html" class="menu-link">Lab 4</a>
+          </li>
+          <li class="menu-item">
+            <a href="./lab-5.html" class="menu-link">Lab 5</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <div class="hero">
+      <div class="container">
+        <div class="tab">
+          <button class="tablinks" onclick="openTab(event, 'Requirement')">
+            Requirement
+          </button>
+          <button class="tablinks" onclick="openTab(event, 'Design')">
+            Design
+          </button>
+          <button class="tablinks" onclick="openTab(event, 'Implement')">
+            Implement
+          </button>
+        </div>
+
+        <div id="Requirement" class="tabcontent">
+          <h1 class="name">Requirement Lab 5</h1>
+          <span class="job-title">Giao tiếp người máy</span>
+          <span class="student-id">Sinh Viên: Đặng Văn Trung</span>
+          <p class="main-text">
+            (1) Tạo ra một user scenario <br />
+            (2) Chọn 1 bước trong user scenario để thiết kế 1 form giao diện Web
+            trên công cụ thiết kế đã chọn. Sau đó thiết kế trên Figma rồi chuyển
+            sang html tương ứng cho thiết kế này.<br />
+          </p>
+        </div>
+
+        <div id="Design" class="tabcontent">
+          <h1 class="name">Design For Lab 5</h1>
+          <span class="job-title">Giao tiếp người máy</span>
+          <span class="student-id">Sinh Viên: Đặng Văn Trung</span>
+          <p class="main-text">
+            Thiết kế công cụ tính chỉ số PED (Elastic On Demand)
+            <br />
+            Mục đích: Tính toán chỉ số co giãn về giá (PED) để hiểu rõ mức độ
+            thay đổi của lượng hàng tiêu thụ dựa trên biến đổi của giá cả. Từ đó
+            đưa ra kế hoạch sản xuất hợp lý.
+            <br />
+            <strong>Các bước chính:</strong>
+            <br />
+            Bước 1: Nhập thông tin sản phẩm:
+            <br />
+            Người dùng nhập thông tin sản phẩm cần phân tích: bao gồm tên, giá
+            ban đầu, lượng tiêu thụ ban đầu và các thông số khác.
+            <br />
+            Bước 2: Chạy phân tích:
+            <br />
+            Dựa trên công thức được cung cấp để tính toán kết quả.
+            <br />
+            Bước 3: Xem kết quả: <br />Người dùng dựa trên kết quả nhận được và
+            đưa ra các quyết định kinh doanh phù hợp.
+          </p>
+          <div class="tb-2-cols design-table">
+            <img src="./images/lab5.png" alt="" class="figma-image" />
+            <a
+              href="./images/lab5.png"
+              download="proposed_file_name"
+              class="button"
+              >Download</a
+            >
+          </div>
+        </div>
+
+        <div id="Implement" class="tabcontent">
+          <h2>Công cụ tính toán chỉ số PED</h2>
+
+          <form id="elasticityForm">
+            <label for="productName">Tên sản phẩm:</label>
+            <select id="productName" required>
+              <option value="product1">Sản phẩm A</option>
+              <option value="product2">Sản phẩm B</option>
+              <option value="product3">Sản phẩm C</option>
+              <!-- Thêm các tùy chọn sản phẩm khác nếu cần -->
+            </select>
+
+            <label for="initialPrice">Giá khởi điểm:</label>
+            <input type="number" id="initialPrice" required /><br />
+
+            <label for="initialQuantity">Sức mua khởi điểm:</label>
+            <input type="number" id="initialQuantity" required /><br />
+
+            <label for="priceChange">Giá thay đổi:</label>
+            <input type="number" id="priceChange" required /><br />
+
+            <button type="button" onclick="calculatePED()">
+              Chạy tính toán
+            </button>
+          </form>
+
+          <div id="result"></div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="container">
+      <span style="font-size: 16px; margin-top: ">
+        Một điều nhỏ bé trong cuộc sống !
+      </span>
+    </footer>
+    <script>
+      function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      function calculatePED() {
+        // Lấy giá trị từ form
+        var initialPrice = document.getElementById("initialPrice").value;
+        var initialQuantity = document.getElementById("initialQuantity").value;
+        var priceChange = document.getElementById("priceChange").value;
+
+        // Thực hiện tính toán PED
+        var PED =
+          (initialQuantity / initialPrice) * (priceChange / initialQuantity);
+
+        // Hiển thị kết quả
+        document.getElementById("result").innerHTML =
+          "<h3>Kết quả:</h3>" +
+          "<p>Độ co giãn giá của cầu (PED) là: " +
+          PED.toFixed(2) +
+          "</p>" +
+          "<p>Điều này có nghĩa là cứ mỗi 1% thay đổi về giá, số lượng yêu cầu dự kiến sẽ thay đổi khoảng " +
+          Math.abs(PED.toFixed(2)) +
+          "%.</p>";
+      }
+    </script>
+  </body>
+</html>
